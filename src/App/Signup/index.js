@@ -1,5 +1,6 @@
 import { TextField, Button, Container, Grid } from "@mui/material";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Signup = () => {
@@ -15,7 +16,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
 
-    const URL = "http://localhost:2000/api/user/signup";
+    const URL = `${process.env.REACT_APP_API_URL}/user/signup`;
 
     const newUser = await axios
       .post(URL, data)
@@ -68,6 +69,9 @@ const Signup = () => {
         <Button onClick={handleSignup} variant='contained'>
           Signup
         </Button>
+        <Link to='/login'>
+          <Button variant='contained'>Login</Button>
+        </Link>
       </Grid>
     </Container>
   );
