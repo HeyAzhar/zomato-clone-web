@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
-import { initialState, reducer } from "./reducer";
-import { StateProvider } from "./StateProvider";
+import { initialState, reducer } from "./Config/reducer";
+import { StateProvider } from "./Config/StateProvider";
 import App from "./App";
 import "./index.css";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
   <BrowserRouter>

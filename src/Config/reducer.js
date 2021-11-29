@@ -5,23 +5,17 @@ export const initialState = {
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case ACTION_TYPE.LOGIN:
+    case ACTION_TYPE.SET_USER:
       return {
         ...state,
-        user: action.payload,
+        user: action.user,
       };
 
-    case ACTION_TYPE.LOGOUT:
-      return {
-        ...state,
-        user: null,
-      };
     default:
       break;
   }
 };
 
 export const ACTION_TYPE = {
-  LOGIN: 1,
-  LOGOUT: 2,
+  SET_USER: 0,
 };
